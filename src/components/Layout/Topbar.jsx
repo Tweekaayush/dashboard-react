@@ -1,15 +1,9 @@
 import React, { useEffect, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
-import {LightModeOutlined, DarkModeOutlined, NotificationsOutlined, SettingsOutlined, PersonOutlined, Settings} from '@mui/icons-material'
-import SearchBar from '../SearchBar'
+import {LightModeOutlined, DarkModeOutlined, NotificationsOutlined, SettingsOutlined, PersonOutlined} from '@mui/icons-material'
 import { changeTheme } from '../../features/themeSlice'
 
 
-const ListItem = () =>{
-  return <li className='nav-list-item'>
-
-  </li>
-}
 
 const Topbar = () => {
 
@@ -46,7 +40,7 @@ const Topbar = () => {
                 <div className="line"></div>
                 <div className="line"></div>
               </div>
-              <SearchBar/>
+              {/* <SearchBar/> */}
             </div>
         </div>        
         <div className="nav-right">

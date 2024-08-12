@@ -1,6 +1,7 @@
 import {useState} from 'react'
 import Header from '../components/Header'
 import {ChevronLeft} from '@mui/icons-material'
+import SearchBar from '../components/SearchBar'
 
 const Accordian = ({question, answer}) =>{
   const [expand, setExpand] = useState(false)
@@ -28,6 +29,13 @@ const FAQ = () => {
     <div className="container">
         <div>
           <Header title='FAQ' subtitle='Frequently Asked Questions Page'/>
+        </div>
+        <div className="faq-search">
+          <h1>How can we help ?</h1>
+          <SearchBar />
+          <h4>
+            Can't find your answers? Contact us at 123-456-789 or reach us at help@support.co.in .
+          </h4>
         </div>
         <div className="question-list">
           <Accordian 
