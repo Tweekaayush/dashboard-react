@@ -6,6 +6,7 @@ import invoiceReducer from '../features/invoiceSlice'
 import chartReducer from '../features/chartSlice'
 import transactionReducer from '../features/transactionSlice'
 import todoReducer from '../features/todoSlice'
+import notificationsReducer from '../features/notificationsSlice'
 
 const rootReducer = combineReducers({
     theme: themeReducer,
@@ -14,7 +15,8 @@ const rootReducer = combineReducers({
     invoices: invoiceReducer,
     chart: chartReducer,
     transaction: transactionReducer,
-    todos: todoReducer
+    todos: todoReducer,
+    notifications: notificationsReducer
 })
 
 const store = configureStore({

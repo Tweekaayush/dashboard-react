@@ -194,6 +194,35 @@ h6{
   box-shadow: 4px 4px 10px var(--box-shadow);
 }
 
+.slider{
+  position: relative;
+  background-color: var(--greenAccent-4);
+  height: 30px;
+  width: 60px;
+  border-radius: 25px;
+}
+
+.slider span{
+  position: absolute;
+  height: 28px;
+  width: 28px;
+  top: 1px;
+  left: 1px;
+  border-radius: 50%;
+  background-color: var(--primary-9);
+  transform: translateX(100%);
+  transition: transform 0.5s ease;
+  cursor: pointer;
+}
+.slider-disabled{
+  background-color: var(--neutral-main);
+}
+
+.slider-disabled span{
+  transform: translateX(0);
+}
+
+
 /* ------------------------------------- Topbar ------------------------------------- */
 
 .navbar{
@@ -262,10 +291,53 @@ h6{
   border-radius: 50%;
   cursor: pointer;
   transition: 0.5s ease;
+  position: relative;
 }
 
 .nav-list-item:hover{
   background-color: var(--primary-4);
+}
+
+.notifications-box{
+  position: absolute;
+  top: 65px;
+  left: -80px;
+  background-color: var(--primary-4);
+  z-index: 998;
+  border-radius: 5px;
+  width: 150px;
+  min-height: 175px;
+  max-height: 175px;
+  box-shadow: 3px 3px 10px var(--box-shadow);
+  display: none;
+  flex-direction: column;
+}
+
+.notifications-header{
+  background-color: var(--background-default);
+  border-radius: 5px 5px 0 0;
+  padding: 5px 10px;
+}
+
+.notifications-list{
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  padding: 5px 0;
+  overflow-y: scroll;
+  height: 100%;
+}
+
+.notifications-list span{
+  word-break: break-all;
+  background-color:var(--background-default);
+  padding: 5px;
+  font-size: 14px;
+}
+
+.notifications-box-active{
+  display: flex;
 }
 
 /* ------------------------------------- Sidebar ------------------------------------- */
@@ -674,6 +746,7 @@ footer{
   display: flex;
   flex-direction: column;
   padding: 16px 16px 16px 24px;
+  word-wrap: break-word;
   word-break: break-all;
 }
 
@@ -820,6 +893,75 @@ footer{
 
 .calendar-container-2{
   flex-direction: column;
+}
+
+/* ------------------------------------- Settings ------------------------------------- */
+
+.settings-container{
+  display: flex;
+  flex-direction: column;
+  background-color: var(--background-default);
+  padding: 16px;
+  box-shadow: 2px 2px 10px var(--box-shadow);
+}
+
+.settings-container > div{
+  margin-bottom: 32px;
+}
+
+.settings-container > div > h2{
+  color: var(--greenAccent-4);
+}
+
+.settings-container > div > h4{
+  color: var(--grey-1);
+  margin-bottom: 16px;
+}
+
+.settings-container hr{
+  margin: 10px 0 20px 0;
+}
+
+.theme-selector{
+  flex: 1;
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.theme-selector > div{
+  display: flex;
+  flex-direction: column;
+  height: fit-content;
+  max-width: 366px;
+  background-color: var(--primary-4);
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.theme-selector div img{
+  flex: 1;
+  object-fit: contain;
+  border-radius: 5px 5px 0 0;
+}
+
+.theme-selector div h5{
+  color: var(--grey-1);
+  padding: 5px 10px;
+}
+
+.theme-active{
+  border: 1px solid var(--grey-1);
+}
+
+.s-notifications > div > h4{ 
+  color: var(--grey-1);
+}
+
+.s-notifications > div{
+  display: flex;
+  align-items: center;
+  gap: 16px;
 }
 
 /* ------------------------------------- Media Queries ------------------------------------- */
