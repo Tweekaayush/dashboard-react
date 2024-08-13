@@ -1,4 +1,4 @@
-import { lazy, useRef, Suspense } from 'react'
+import { lazy, useRef, Suspense, useState, useEffect } from 'react'
 import './App.css'
 import {BrowserRouter as Router, Routes, Route} from 'react-router-dom'
 import Topbar from './components/Layout/Topbar'
@@ -20,11 +20,17 @@ const Contacts = lazy(() => import('./pages/Contacts'))
 const App = () => {
 
   const ref = useRef(0)
+  const [toggle, setToggle] = useState(false)
+
+  useEffect(()=>{
+    if(window.innerWidth < 800)
+      setToggle(true)
+  },[])
 
   return (
     <Router>
-      <Topbar/>
-      <Sidebar/>
+      <Topbar toggle={toggle} setToggle={setToggle}/>
+      <Sidebar toggle={toggle} setToggle={setToggle}/>
       <div id="app" ref={ref}>
         <Suspense fallback={<Loader />}> 
           <Routes>

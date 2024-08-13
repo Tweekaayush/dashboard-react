@@ -31,7 +31,7 @@ const FAQ = () => {
           <Header title='FAQ' subtitle='Frequently Asked Questions Page'/>
         </div>
         <div className="faq-search">
-          <h1>How can we help ?</h1>
+          {/* <h1>How can we help ?</h1> */}
           <SearchBar />
           <h4>
             Can't find your answers? Contact us at 123-456-789 or reach us at help@support.co.in .
